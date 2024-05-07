@@ -119,6 +119,14 @@
       <Project>{a3b431b1-9f9f-4d0b-a141-8ac0ae122edd}</Project>
       <Name>Accessory</Name>
     </ProjectReference>
+    <ProjectReference Include="..\model\Model.csproj">
+      <Project>{27a15789-0880-4574-b189-0f2011d71999}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{a9b7739c-2fde-4a8e-80b5-983598815bb0}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

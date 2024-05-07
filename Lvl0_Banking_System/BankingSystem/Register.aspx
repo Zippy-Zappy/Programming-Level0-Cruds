@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-3">
             <div class="mb-3">
-                <asp:Button ID="btnSignup" runat="server" CssClass="btn btn-outline-success" Text="Sign up"/>
+                <asp:Button ID="btnSignup" runat="server" CssClass="btn btn-outline-success" Text="Sign up" OnClick="btnSignup_Click"/>
             </div>
         </div>
     </div>

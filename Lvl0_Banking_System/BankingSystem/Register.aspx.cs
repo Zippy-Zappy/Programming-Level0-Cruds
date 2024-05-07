@@ -1,4 +1,6 @@
-﻿using System;
+﻿using model;
+using Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,24 @@ namespace BankingSystem
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnSignup_Click(object sender, EventArgs e)
+        {
+            Authentication auth = new Authentication();
+            User user = new User();
+            try
+            {
+                user.Username = txtUsername.Text;
+                user.Password = txtPassword.Text;
+
+                auth.Register(user);
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("Error", ex);
+            }
         }
     }
 }

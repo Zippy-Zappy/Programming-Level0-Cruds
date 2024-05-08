@@ -13,6 +13,7 @@ namespace AccesoDatos
     {
         private readonly SqlConnection connection;
         private readonly SqlCommand command;
+        private SqlDataReader reader;
 
         public DatabaseAccess()
         {
@@ -20,7 +21,10 @@ namespace AccesoDatos
             command = new SqlCommand();
         }
 
-        public SqlDataReader Reader { get; }
+        public SqlDataReader Reader
+        {
+            get { return reader; }
+        }
 
         public void SetStoredProcedure(string sp)
         {
@@ -36,6 +40,17 @@ namespace AccesoDatos
         public void ExecuteReader()
         {
             command.Connection = connection;
+            try
+            {
+                connection.Open();
+                reader = command.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public void CloseConnection()

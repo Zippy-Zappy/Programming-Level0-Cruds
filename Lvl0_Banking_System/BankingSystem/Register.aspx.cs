@@ -1,4 +1,5 @@
-﻿using model;
+﻿using Accessory;
+using model;
 using Service;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace BankingSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblError.Visible = false;
         }
 
         protected void btnSignup_Click(object sender, EventArgs e)
@@ -24,8 +25,20 @@ namespace BankingSystem
             {
                 user.Username = txtUsername.Text;
                 user.Password = txtPassword.Text;
+                
+                Validation validation = new Validation();
+                if (!validation.UserExists(user))
+                {
+                    auth.Register(user);
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    lblError.Visible = true;
+                    lblError.Text += "Username already exists.";
+                }
 
-                auth.Register(user);
+
             }
             catch (Exception ex)
             {

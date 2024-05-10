@@ -43,7 +43,7 @@ namespace BankingSystem
             catch (Exception ex)
             {
 
-                Session.Add("Error", ex);
+                Session.Add("error", ex.ToString());
             }
         }
     }

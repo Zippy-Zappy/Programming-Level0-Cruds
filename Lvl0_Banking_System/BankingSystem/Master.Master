@@ -17,7 +17,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">My banking system</a>
-<%--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <%--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>--%>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -28,8 +28,18 @@
                     </ul>
                 </div>
                 <div>
+                    <% if (!Accessory.Security.ActiveSession(Session["userSession"]))
+                        { %>
                     <a class="btn btn-success" href="Login.aspx">Login</a>
                     <a class="btn btn-success-primary" href="Register.aspx">Sign up</a>
+                    <%
+                        }
+                        else
+                        {
+                            %>
+                    <asp:Label ID ="lblUsername" runat="server" CssClass="form-label" Text="Hello, user!"></asp:Label>
+                    <asp:Button ID="btnQuit" runat="server" CssClass="btn btn-danger" Text="Quit"/>
+                        <%}%>
                 </div>
             </div>
         </nav>

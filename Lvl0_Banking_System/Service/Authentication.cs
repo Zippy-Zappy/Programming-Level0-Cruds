@@ -35,5 +35,33 @@ namespace Service
             }
             finally { data.CloseConnection(); }
         }
+        public bool Login(User user)
+        {
+            DatabaseAccess data = new DatabaseAccess();
+            try
+            {
+                data.SetStoredProcedure("loginSP");
+                data.SetParameters("@username", user.Username);
+                data.SetParameters("@password", user.Password);
+
+                data.ExecuteReader();
+
+                if (data.Reader.Read())
+                {
+                    user.Id = (int)data.Reader["Id"];
+                    user.Username = (string)data.Reader["Username"];
+                    user.Password = (string)data.Reader["Password"];
+
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { data.CloseConnection(); }
+        }
     }
 }

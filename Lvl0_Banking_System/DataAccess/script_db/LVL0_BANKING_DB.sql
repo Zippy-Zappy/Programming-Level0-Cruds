@@ -1,7 +1,7 @@
 USE [master]
 GO
 
-/****** Object:  Database [LVL0_BANKING_DB]    Script Date: 9/5/2024 21:33:00 ******/
+/****** Object:  Database [LVL0_BANKING_DB]    Script Date: 10/5/2024 16:31:23 ******/
 CREATE DATABASE [LVL0_BANKING_DB]
  CONTAINMENT = NONE
  ON  PRIMARY 

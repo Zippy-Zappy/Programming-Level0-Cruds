@@ -13,7 +13,6 @@ namespace BankingSystem
 {
     public partial class Login : System.Web.UI.Page
     {
-        private int loginAttempts;
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Visible = false;
@@ -22,9 +21,10 @@ namespace BankingSystem
             {
 
                 if (Session["loginAttempts"] != null)
-                    loginAttempts = (int)Session["loginAttempts"];
+                    Session["loginAttempts"] = int.Parse(Session["loginAttempts"].ToString()); 
                 else
-                    loginAttempts = 0;
+                    Session.Add("loginAttempts", 0);
+
             }
         }
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -44,15 +44,17 @@ namespace BankingSystem
                 }
                 else
                 {
-                    loginAttempts++;
+                    Session["loginAttempts"] = int.Parse(Session["loginAttempts"].ToString()) + 1;
                     lblError.Visible = true;
                     lblError.Text = "Incorrect Username or Password.";
 
-                    Session["loginAttempts"] = loginAttempts;
 
-                    if (loginAttempts == 3)
+                    if ((int)Session["loginAttempts"] == 3)
+                    {
                         lblError.Text = "You have failed to log in three times. You have been temporarily locked out... " +
-                            "however that functionality does not exist so you can still try.";
+                            "however that functionality does not exist so just refresh the page.";
+                        btnLogin.Enabled = false;
+                    }
 
                 }
 

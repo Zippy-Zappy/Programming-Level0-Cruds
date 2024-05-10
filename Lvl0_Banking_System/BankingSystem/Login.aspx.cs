@@ -40,7 +40,7 @@ namespace BankingSystem
                 if (auth.Login(user))
                 {
                     Session.Add("userSession", user);
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Default.aspx", false);
                 }
                 else
                 {

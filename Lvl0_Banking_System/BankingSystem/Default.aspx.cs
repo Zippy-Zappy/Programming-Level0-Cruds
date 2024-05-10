@@ -1,4 +1,6 @@
 ﻿using System;
+using model;
+using Service;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,19 @@ namespace BankingSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userSession"] != null)
+            {
+                try
+                {
+                    UserService service = new UserService();
+                    lblBalance.Text += service.ShowBalance((User)Session["userSession"]).ToString();
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("error", ex.ToString());
 
+                }
+            }
         }
     }
 }

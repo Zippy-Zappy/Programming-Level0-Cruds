@@ -1,5 +1,6 @@
 ﻿using System;
 using Accessory;
+using model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,17 @@ namespace BankingSystem
                 if (!(Page is Login || Page is Register))
                     Response.Redirect("Login.aspx", false);
             }
+            else
+            {
+                User user = (User)Session["userSession"];
+                lblUsername.Text = $"Hello, {user.Username}!";
+            }
+        }
+
+        protected void btnQuit_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Response.Redirect("Login.aspx");
         }
     }
 }

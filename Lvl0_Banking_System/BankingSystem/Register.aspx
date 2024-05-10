@@ -14,9 +14,9 @@
     </div>
     <div class="row">
         <div class="col-3">
-            <asp:Label ID="lblPassword" runat="server" Text="Password" REQUIRED></asp:Label>
+            <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
             <div class="mb-3">
-                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" REQUIRED></asp:TextBox>
             </div>
         </div>
     </div>

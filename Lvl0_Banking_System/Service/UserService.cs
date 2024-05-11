@@ -10,7 +10,7 @@ namespace Service
 {
     public class UserService
     {
-        public float ShowBalance(User user)
+        public float GetBalance(User user)
         {
             DatabaseAccess data = new DatabaseAccess();
 
@@ -25,7 +25,7 @@ namespace Service
                 {
                     user.Balance = Convert.ToSingle(data.Reader["Balance"]);
 
-                    return user.Balance; 
+                    return user.Balance;
                 }
 
                 return 0.00f;
@@ -42,7 +42,14 @@ namespace Service
 
             try
             {
+                data.SetStoredProcedure("withdrawSP");
+                data.SetParameters("@id", user.Id);
+                data.SetParameters("@amount", amount);
 
+                if (GetBalance(user) < amount)
+                    return;
+
+                data.ExecuteProcess();
             }
             catch (Exception ex)
             {
@@ -50,5 +57,6 @@ namespace Service
                 throw ex;
             }
             finally { data.CloseConnection(); }
+        }
     }
 }

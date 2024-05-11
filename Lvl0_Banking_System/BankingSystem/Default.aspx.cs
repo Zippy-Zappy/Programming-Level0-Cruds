@@ -18,13 +18,28 @@ namespace BankingSystem
                 try
                 {
                     UserService service = new UserService();
-                    lblBalance.Text += service.ShowBalance((User)Session["userSession"]).ToString();
+                    lblBalance.Text += service.GetBalance((User)Session["userSession"]).ToString();
                 }
                 catch (Exception ex)
                 {
                     Session.Add("error", ex.ToString());
 
                 }
+            }
+        }
+
+        protected void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            UserService service = new UserService();
+            User user = (User)Session["userSession"];
+            try
+            {
+                service.Withdraw(user, 2000);
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex.ToString());
             }
         }
     }

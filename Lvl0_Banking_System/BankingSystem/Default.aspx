@@ -10,4 +10,11 @@
             </div>
         </div>
     </div>
+    <div class="row d-flx justify-content-evenly">
+        <div class="col-3">
+            <div class="mb-3">
+                <asp:Button ID="btnWithdraw" runat="server" CssClass="btn btn-success" OnClick="btnWithdraw_Click" Text="Withdraw" />
+            </div>
+        </div>
+    </div>
 </asp:Content>

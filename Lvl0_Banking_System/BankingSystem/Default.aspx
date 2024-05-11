@@ -2,10 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row">
-        <div class="col-3">
+    <div class="row  d-flx justify-content-center">
+        <div class="col-6">
             <div class="mb-3">
-                <asp:Label ID="lblBalance" CssClass="h1" runat="server" Text="$"></asp:Label>
+                <asp:Label ID="lblYour" runat="server" CssClass="h3" Text="Your current balance is:"></asp:Label>
+                <asp:Label ID="lblBalance" CssClass="display-1" runat="server" Text="$"></asp:Label>
             </div>
         </div>
     </div>

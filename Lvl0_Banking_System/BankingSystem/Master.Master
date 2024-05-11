@@ -36,16 +36,16 @@
                         }
                         else
                         {
-                            %>
-                    <asp:Label ID ="lblUsername" runat="server" CssClass="form-label" Text="Hello, user!"></asp:Label>
-                    <asp:Button ID="btnQuit" runat="server" CssClass="btn btn-danger" Text="Quit" OnClick="btnQuit_Click"/>
-                        <%}%>
+                    %>
+                    <asp:Label ID="lblUsername" runat="server" CssClass="form-label" Text="Hello, user!"></asp:Label>
+                    <asp:Button ID="btnQuit" runat="server" CssClass="btn btn-danger" Text="Quit" OnClick="btnQuit_Click" />
+                    <%}%>
                 </div>
             </div>
         </nav>
+        <hr />
         <div class="container">
             <div>
-                <hr />
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

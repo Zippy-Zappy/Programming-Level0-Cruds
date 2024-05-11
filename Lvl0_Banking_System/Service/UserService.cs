@@ -36,5 +36,19 @@ namespace Service
             }
             finally { data.CloseConnection(); }
         }
+        public void Withdraw(User user, float amount)
+        {
+            DatabaseAccess data = new DatabaseAccess();
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { data.CloseConnection(); }
     }
 }

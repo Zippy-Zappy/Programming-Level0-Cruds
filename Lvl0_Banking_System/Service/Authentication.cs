@@ -11,12 +11,6 @@ namespace Service
 {
     public class Authentication
     {
-        //public bool Login(string username, string password)
-        //{
-        //    DatabaseAccess data = new DatabaseAccess();
-        //    data.SetStoredProcedure("");
-        //    return true;
-        //}
         public void Register(User user)
         {
             DatabaseAccess data = new DatabaseAccess();

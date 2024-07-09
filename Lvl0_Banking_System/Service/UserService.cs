@@ -58,5 +58,25 @@ namespace Service
             }
             finally { data.CloseConnection(); }
         }
+        public void Deposit(User user, float amount)
+        {
+            DatabaseAccess data = new DatabaseAccess();
+
+            try
+            {
+                data.SetStoredProcedure("depositSP");
+                data.SetParameters("@Id", user.Id);
+                data.SetParameters("@amount", amount);
+
+                data.ExecuteProcess();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { data.CloseConnection(); }
+        }
     }
+
 }

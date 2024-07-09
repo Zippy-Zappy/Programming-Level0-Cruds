@@ -11,52 +11,52 @@ namespace BankingSystem
 {
 
 
-    public partial class Default
+    public partial class AmountPage
     {
 
         /// <summary>
-        /// Control ScriptManager1.
+        /// Control lblAmount.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label lblAmount;
 
         /// <summary>
-        /// Control lblYour.
+        /// Control txtAmount.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblYour;
+        protected global::System.Web.UI.WebControls.TextBox txtAmount;
 
         /// <summary>
-        /// Control lblBalance.
+        /// Control btnAccept.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBalance;
+        protected global::System.Web.UI.WebControls.Button btnAccept;
 
         /// <summary>
-        /// Control btnWithdraw.
+        /// Control chkConfirmAmount.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnWithdraw;
+        protected global::System.Web.UI.WebControls.CheckBox chkConfirmAmount;
 
         /// <summary>
-        /// Control btnDeposit.
+        /// Control btnConfirm.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDeposit;
+        protected global::System.Web.UI.WebControls.Button btnConfirm;
     }
 }

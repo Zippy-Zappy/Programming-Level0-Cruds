@@ -1,7 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="BankingSystem.Default" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <%--    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>--%>
     <div class="row  d-flx justify-content-center">
         <div class="col-6">
             <div class="mb-3">
@@ -10,10 +14,13 @@
             </div>
         </div>
     </div>
+    <%--        </ContentTemplate>
+    </asp:UpdatePanel>--%>
     <div class="row d-flx justify-content-evenly">
         <div class="col-3">
             <div class="mb-3">
-                <asp:Button ID="btnWithdraw" runat="server" CssClass="btn btn-success" OnClick="btnWithdraw_Click" Text="Withdraw" />
+                <asp:Button ID="btnWithdraw" runat="server" CssClass="btn btn-success" OnClick="btnWithdraw_Click" Text="Withdraw" AutoPostBack="true" />
+                <asp:Button ID="btnDeposit" runat="server" CssClass="btn btn-primary" OnClick="btnDeposit_Click" Text="Deposit" AutoPostBack="true" />
             </div>
         </div>
     </div>

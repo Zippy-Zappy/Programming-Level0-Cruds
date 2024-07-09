@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AmountPage.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
@@ -74,6 +75,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AmountPage.aspx.cs">
+      <DependentUpon>AmountPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AmountPage.aspx.designer.cs">
+      <DependentUpon>AmountPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

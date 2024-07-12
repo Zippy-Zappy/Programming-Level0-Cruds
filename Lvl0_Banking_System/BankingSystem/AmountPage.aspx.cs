@@ -23,6 +23,7 @@ namespace BankingSystem
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
             Session.Add("amount", float.Parse(txtAmount.Text));
+            Response.Redirect("Default.aspx");
         }
     }
 }

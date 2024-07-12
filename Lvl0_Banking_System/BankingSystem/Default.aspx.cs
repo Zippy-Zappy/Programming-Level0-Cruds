@@ -17,9 +17,7 @@ namespace BankingSystem
             {
                 try
                 {
-                    UserService service = new UserService();
-                    lblBalance.Text = $"${service.GetBalance((User)Session["userSession"])}";
-
+                    ShowAmount((User)Session["userSession"]);
                 }
                 catch (Exception ex)
                 {
@@ -36,7 +34,8 @@ namespace BankingSystem
             try
             {
                 service.Withdraw(user, 2000);
-                lblBalance.Text = $"${service.GetBalance((User)Session["userSession"])}";
+                //service.Withdraw(user, (float)Session["amount"]);
+                //ShowAmount(user);
             }
             catch (Exception ex)
             {
@@ -53,7 +52,21 @@ namespace BankingSystem
             try
             {
                 service.Deposit(user, 2000);
-                lblBalance.Text = $"${service.GetBalance((User)Session["userSession"])}";
+                //service.Deposit(user, (float)Session["amount"]);
+                //ShowAmount(user);
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex.ToString());
+            }
+        }
+        protected void ShowAmount(User user)
+        {
+            UserService service = new UserService();
+            try
+            {
+                lblBalance.Text = $"${service.GetBalance(user)}";
             }
             catch (Exception ex)
             {

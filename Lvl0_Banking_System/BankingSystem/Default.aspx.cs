@@ -68,5 +68,18 @@ namespace BankingSystem
                 Session.Add("error", ex.ToString());
             }
         }
+
+        protected void btnTransfer_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect("TransferPage.aspx");
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex.ToString());
+            }
+        }
     }
 }

@@ -12,12 +12,13 @@
         </div>
     </div>
     <div class="row d-flx justify-content-evenly">
-        <div class="col-3">
+        <div class="col-6">
             <div class="mb-3">
-                <asp:Button ID="btnWithdraw" runat="server" CssClass="btn btn-success" OnClick="btnWithdraw_Click" Text="Withdraw"/>
-                <asp:Button ID="btnDeposit" runat="server" CssClass="btn btn-primary" OnClick="btnDeposit_Click" Text="Deposit"/>
-                <asp:HiddenField ID="hdnAction" runat="server" />
+                <asp:Button ID="btnWithdraw" runat="server" CssClass="btn btn-success" OnClick="btnWithdraw_Click" Text="Withdraw" />
+                <asp:Button ID="btnDeposit" runat="server" CssClass="btn btn-primary" OnClick="btnDeposit_Click" Text="Deposit" />
+                <asp:Button ID="btnTransfer" runat="server" CssClass="btn btn-primary" OnClick="btnTransfer_Click" Text="Transfer" />
             </div>
+            <asp:HiddenField ID="hdnAction" runat="server" />
         </div>
     </div>
 </asp:Content>

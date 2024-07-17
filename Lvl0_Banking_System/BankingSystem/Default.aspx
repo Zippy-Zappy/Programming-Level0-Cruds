@@ -16,6 +16,7 @@
             <div class="mb-3">
                 <asp:Button ID="btnWithdraw" runat="server" CssClass="btn btn-success" OnClick="btnWithdraw_Click" Text="Withdraw"/>
                 <asp:Button ID="btnDeposit" runat="server" CssClass="btn btn-primary" OnClick="btnDeposit_Click" Text="Deposit"/>
+                <asp:HiddenField ID="hdnAction" runat="server" />
             </div>
         </div>
     </div>

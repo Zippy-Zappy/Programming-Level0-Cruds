@@ -7,7 +7,7 @@
         <div class="col-3">
             <asp:Label ID="lblDestination" runat="server" Text="Write the destination username:"></asp:Label>
             <div class="mb-3">
-                <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:TextBox ID="txtDestination" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <asp:Label ID="lblAmount" runat="server" CssClass="p1" Text="Choose the amount:"></asp:Label>
             <div class="mb-3">
@@ -17,7 +17,8 @@
             <% if (ConfirmTransfer)
                 {%>
             <div class="mb-3">
-                <asp:CheckBox ID="chkConfirmTransfer" runat="server" Text="This is the correct amount and transfer destination." />
+                <%--<input id="chkConfirm" runat="server" type="checkbox" Text="<%= "I am sending $" + txtAmount.Text + " to " + txtDestination.Text%>"/>--%>
+                <asp:CheckBox ID="chkConfirmTransfer" runat="server" Text="This is correct amount and destination." />
                 <asp:Button ID="btnConfirm" runat="server" CssClass="btn btn-success" Text="Confirm" OnClick="btnConfirm_Click"/>
             </div>
             <% } %>

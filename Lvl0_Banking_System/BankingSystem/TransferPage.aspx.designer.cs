@@ -24,13 +24,13 @@ namespace BankingSystem
         protected global::System.Web.UI.WebControls.Label lblDestination;
 
         /// <summary>
-        /// Control txtUsername.
+        /// Control txtDestination.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
+        protected global::System.Web.UI.WebControls.TextBox txtDestination;
 
         /// <summary>
         /// Control lblAmount.

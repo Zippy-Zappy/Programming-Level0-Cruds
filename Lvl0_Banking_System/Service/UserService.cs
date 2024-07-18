@@ -77,6 +77,25 @@ namespace Service
             }
             finally { data.CloseConnection(); }
         }
+        public void Transfer(User user, float amount, string targetUsername)
+        {
+            DatabaseAccess data = new DatabaseAccess();
+            try
+            {
+                data.SetStoredProcedure("transferSP");
+                data.SetParameters("@IdSender", user.Id);
+                data.SetParameters("@TargetUsername", targetUsername);
+                data.SetParameters("@amount", amount);
+
+                data.ExecuteProcess();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { data.CloseConnection(); }
+        }
     }
 
 }
